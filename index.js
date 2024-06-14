@@ -14,7 +14,7 @@ app.get("/health", (req, res) => {
   });
 });
 
-app.get("/getPolicyDetails/:policy_number", async (req, res) => {
+app.post("/getPolicyDetails/:policy_number", async (req, res) => {
   const policyNumber = req.params.policy_number;
   console.log("was here");
   const response_auth = await fetch(
