@@ -1,6 +1,10 @@
 import express from "express";
+import bodyParser from 'body-parser';
+
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(bodyParser.json()); // Middleware to parse JSON bodies
 
 // Health check route
 app.get("/health", (req, res) => {
