@@ -1,0 +1,19 @@
+{
+  "name": "od_socotra",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon  index.js",
+    "start": "node index.js"
+  },
+  "author": "Suraj Kumar",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
