@@ -138,6 +138,9 @@ app.post("/getPolicyData", async (req, res) => {
     const js_obj_policy = await response_policy.json();
 
     const premium = js_obj_policy.characteristics[0].grossPremium;
+    const premiumNumber = parseFloat(premium);
+    const formattedPremium = premiumNumber.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    
     const insured_name = js_obj_policy.characteristics[0].fieldValues.insuredName[0];
     const policy_start = js_obj_policy.originalContractStartTimestamp;
     const policy_end = js_obj_policy.originalContractEndTimestamp;
@@ -166,7 +169,7 @@ app.post("/getPolicyData", async (req, res) => {
       successful: true,
       output_data: {
         attributes: {
-          premium: premium,
+          premium: formattedPremium,
           insured_name: insured_name,
           policy_start: formattedDateString_policyStart,
           policy_end: formattedDateString_policyEnd,
